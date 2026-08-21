@@ -4,39 +4,26 @@ A curated collection of open, portable, and production-grade skills for AI Codin
 
 Designed to work seamlessly across **Anthropic Claude Code**, **OpenAI Codex**, **Google Antigravity (`agy`)**, **Cursor IDE**, **Windsurf**, **Nous Hermes Agent**, **Cline**, and **Roo Code**.
 
+Includes native skills for **BRAIAM OS**, **Spec-Driven Development (SDD)**, media intelligence, and is automatically synchronized daily with **[mattpocock/skills](https://github.com/mattpocock/skills)**.
+
 ---
 
-## 📂 Repository Structure
+## 🔄 Automatic Upstream Synchronization
 
-```text
-├── .agents/
-│   ├── README.md
-│   └── skills/
-│       ├── braiam-orchestrator/
-│       ├── spec-driven-development/
-│       ├── braiam-hybrid-worker/
-│       ├── youtube-channel-outliers/
-│       ├── youtube-video-analysis/
-│       ├── youtube-viral-shorts-cuts/
-│       ├── meeting-viral-shorts-cuts/
-│       ├── youtube-innertube-download/
-│       ├── youtube-proxy-mine/
-│       ├── ai-trend-monitor/
-│       ├── twitter-trends/
-│       ├── evolution-api-whatsapp/
-│       ├── excalidraw/
-│       └── langfuse-stats/
-├── AGENTS.md
-└── README.md
+This repository includes an automated GitHub Actions workflow (`.github/workflows/sync-upstream-skills.yml`) that runs daily to fetch and merge the latest version of skills from `mattpocock/skills`.
+
+You can also trigger a manual sync anytime via:
+```bash
+python3 scripts/sync-upstream.py
 ```
 
 ---
 
-## 🛠️ Published Skills Catalog
+## 🛠️ Complete Published Skills Catalog (50 Skills)
 
 ### 🧠 1. Core & Architecture (BRAIAM OS Standard)
 * **[`braiam-orchestrator`](.agents/skills/braiam-orchestrator/SKILL.md)**: Universal AI Operating System orchestrator. Implements 4-tier bounded context architecture (Level 0 Core → Level 1 Project Packet → Level 2 Evidence → Level 3 Archive), security boundaries (`*-life-private` vs `*-company-private` vs `*-os`), and multi-agent coordination.
-* **[`spec-driven-development`](.agents/skills/spec-driven-development/SKILL.md)**: Spec-Driven Development (SDD) standard for autonomous agents (inspired by GitHub Next & Matt Pocock prompting standards). Spec-first contracts, non-goals, upfront test harnesses, and deterministic verification.
+* **[`spec-driven-development`](.agents/skills/spec-driven-development/SKILL.md)**: Spec-Driven Development (SDD) standard for autonomous agents. Spec-first contracts, non-goals, upfront test harnesses, and deterministic verification.
 * **[`braiam-hybrid-worker`](.agents/skills/braiam-hybrid-worker/SKILL.md)**: Remote and hybrid worker delegation protocol. Efficiently orchestrates Claude Code, OpenAI Codex, and Google Antigravity across local workstations and cloud VPS while optimizing token quotas.
 
 ### 🎥 2. Media & Content Intelligence (YouTube & Video Mining)
@@ -56,6 +43,13 @@ Designed to work seamlessly across **Anthropic Claude Code**, **OpenAI Codex**, 
 * **[`excalidraw`](.agents/skills/excalidraw/SKILL.md)**: Generates valid hand-drawn Excalidraw diagrams (`.excalidraw` JSON) for system architectures, workflows, and flowcharts with client-side encrypted upload script (`scripts/upload.py`).
 * **[`langfuse-stats`](.agents/skills/langfuse-stats/SKILL.md)**: Setup, troubleshoot, and query local Langfuse observability metrics, token costs, and latency.
 
+### ⚡ 5. Engineering & Productivity (Synced from Matt Pocock)
+* **`to-spec`**, **`implement-spec`**, **`implement`**: End-to-end specification to verified implementation pipeline.
+* **`code-review`**, **`codebase-design`**, **`improve-codebase-architecture`**: Deep architecture reviews and design-it-twice patterns.
+* **`tdd`**, **`diagnosing-bugs`**, **`resolving-merge-conflicts`**: Rigorous testing, root-cause diagnosis, and clean conflict resolution.
+* **`wayfinder`**, **`wizard`**, **`ask-matt`**, **`triage`**, **`to-tickets`**: Workflow routing, interactive wizards, and issue triage.
+* **`grill-me`**, **`grilling`**, **`teach`**, **`handoff`**, **`writing-for-agents`**, **`wait-what`**: Agent-to-human interview grilling, mental model teaching, and context handoff.
+
 ---
 
 ## 🤖 How to Use with Any AI Agent
@@ -74,3 +68,4 @@ Place or symlink this `.agents` directory into your project root:
 
 ## 📜 License
 MIT License. Created by [Thiago Nobrega](https://github.com/tsnthiago).
+Upstream skills copyright [Matt Pocock](https://github.com/mattpocock/skills).
