@@ -1,14 +1,14 @@
-# Portable Agent Assets (.agents/)
+# Recursos Portáteis de Agentes (`.agents/`) 🚀
 
-This directory is the canonical home for reusable, multi-agent skills following the open `.agents/` standard.
+Este diretório é o lar canônico de skills reutilizáveis que seguem o padrão aberto `.agents/`.
 
-## Layout
+## Estrutura de Diretórios
 
 ```text
 .agents/
   README.md
   skills/
-    <skill-name>/
+    <nome-da-skill>/
       SKILL.md
       references/
       scripts/
@@ -16,18 +16,20 @@ This directory is the canonical home for reusable, multi-agent skills following 
       assets/
 ```
 
-## Compatibility
+## Compatibilidade Universal
 
-Skills located in `.agents/skills/` are fully compatible with:
-- **Codex CLI / OpenAI Codex**
+As skills localizadas em `.agents/skills/` são 100% interoperáveis com:
 - **Anthropic Claude Code**
-- **Google Antigravity (agy)**
+- **OpenAI Codex CLI**
+- **Google Antigravity (`agy`)**
 - **Cursor IDE / Windsurf**
 - **Nous Hermes Agent**
 - **Cline / Roo Code**
-- Any LLM orchestrator supporting system prompt injection or dynamic tool/skill loading.
+- Qualquer orquestrador de IA que suporte injeção de contexto ou ferramentas dinâmicas.
 
-## Rules for Skills
-- Each skill must contain a `SKILL.md` with clear trigger conditions, workflow steps, schema/format references, and verification.
-- Supporting scripts and reference files must remain self-contained inside the skill's subdirectory (`scripts/`, `references/`, etc.).
-- No private credentials, machine-specific absolute paths, or proprietary secrets.
+## Regras de Engenharia para Skills
+1. **Contrato Estrito:** Toda skill deve ter um `SKILL.md` com YAML frontmatter válido, gatilhos de ativação explícitos (*Quando usar* / *Quando não usar*), fluxo passo a passo e critérios de verificação.
+2. **Autonomia:** Scripts auxiliares (`scripts/`) e referências (`references/`) devem ser autocontidos na pasta da skill.
+3. **Privacidade e Segurança:** Nunca incluir credenciais, chaves de API, dados privados ou caminhos absolutos de máquinas específicas.
+
+Consulte o [`README.md`](../README.md) na raiz do repositório para o catálogo completo e detalhado das 50 skills disponíveis.

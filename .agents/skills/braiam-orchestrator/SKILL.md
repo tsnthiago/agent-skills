@@ -1,7 +1,7 @@
 ---
 name: braiam-orchestrator
-description: "Universal AI Operating System (BRAIAM OS) orchestrator: multi-agent coordination, 4-tier bounded context architecture, strict privacy boundaries, and delegation across Claude Code, Codex, Antigravity, Cursor, and Hermes."
-version: 1.0.0
+description: "Universal AI Operating System (BRAIAM OS) orchestrator: multi-agent coordination, 4-tier bounded context architecture, strict privacy boundaries, and dynamic skill routing across Claude Code, Codex, Antigravity, Cursor, and Hermes."
+version: 1.1.0
 author: BRAIAM / Thiago Nobrega
 license: MIT
 metadata:
@@ -35,16 +35,6 @@ The BRAIAM OS Orchestrator turns any AI agent into an autonomous personal and or
 
 ---
 
-## When to Use
-
-- Building or operating a comprehensive personal or organizational AI operating system.
-- Coordinating multiple specialized agents (e.g., triage agent, coding worker, research assistant).
-- Separating private personal data, confidential company operations, and reusable product templates.
-- Enforcing bounded context loading across large codebases or note vaults (Obsidian / Notion).
-- Running hybrid workflows across cloud VPS, local machines, and different CLI tools (Claude Code, Codex, Antigravity).
-
----
-
 ## 1. Information Boundaries (Privacy First)
 
 Always isolate repositories and contexts by security zone:
@@ -73,19 +63,40 @@ Do not dump entire repositories or chat histories into prompt context. Use the 4
 
 ---
 
-## 3. Multi-Agent Delegation Protocol
+## 3. Dynamic Skill Routing Matrix (How to Dispatch Work)
+
+The orchestrator dynamically routes incoming requests to specialized skills in `.agents/skills/`:
+
+### A. Feature Development & Refactoring (Spec-First)
+1. **Unclear/Ambiguous Request** → Load `grill-me` (interrogate requirements) → Load `to-spec` (author `SPEC.md`).
+2. **Spec Approved** → Load `implement-spec` (plan execution steps) → Load `tdd` (author failing tests).
+3. **Coding & Verification** → Load `implement` or delegate to `braiam-hybrid-worker` → Load `code-review`.
+
+### B. Bug Diagnosis & Troubleshooting
+1. Load `diagnosing-bugs` (4-phase systematic diagnosis; no guesswork).
+2. If multi-agent merge conflict occurs → Load `resolving-merge-conflicts`.
+
+### C. Media & Content Mining (YouTube / Audio)
+1. **Channel Outliers** → Load `youtube-channel-outliers` (benchmark channel, find top outliers).
+2. **Video Dissection** → Load `youtube-video-analysis` (retention & transcript breakdown).
+3. **Shorts / Reels Extraction** → Load `youtube-viral-shorts-cuts` or `meeting-viral-shorts-cuts`.
+4. **Fast Metadata / Large Ingestion** → Load `youtube-innertube-download` or `youtube-proxy-mine`.
+
+### D. News, Trends & Social
+1. **AI News Briefing** → Load `ai-trend-monitor` (stateful deduplication across RSS).
+2. **X / Twitter Trends** → Load `twitter-trends` (no-login trends scraper).
+3. **WhatsApp Management** → Load `evolution-api-whatsapp`.
+
+### E. Visual Architecture & Observability
+1. **Diagrams** → Load `excalidraw` (JSON generation & AES-GCM upload).
+2. **LLM Cost & Trace Telemetry** → Load `langfuse-stats`.
+
+---
+
+## 4. Multi-Agent Delegation Protocol
 
 When delegating between orchestrators (e.g., Hermes / Codex) and execution workers (e.g., Claude Code, Antigravity `agy`):
 
 1. **Lightweight Orchestrator:** Maintains high-level strategy, breaks down tasks using Spec-Driven Development, and assigns self-contained tasks.
 2. **Heavy Execution Worker:** Runs in an isolated session, executes filesystem edits, builds, and test runs.
 3. **Self-Report Verification:** The orchestrator **never trusts** verbal claims ("task finished successfully"). The orchestrator must independently verify file existence, test results, and git diffs before concluding the task.
-
----
-
-## 4. Anti-Patterns to Avoid
-
-- ❌ **The Monolithic System Prompt:** Stuffing years of memories, all project docs, and code snippets into one massive prompt.
-- ❌ **Blind Delegation:** Spawning subagents without concrete deliverables, schemas, or exit criteria.
-- ❌ **Fabricated Output:** Reporting that code compiles or tests pass without running them.
-- ❌ **Platform Lock-in:** Hardcoding instructions for only one vendor (e.g., only Cursor or only Claude). Use the standard `.agents/` layout so any tool can execute it.
