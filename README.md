@@ -1,8 +1,8 @@
 # Agent Skills (.agents/skills) 🚀
 
-Collection of open, portable, and production-grade skills for AI Coding Agents following the `.agents/` standard.
+Collection of open, portable, and production-grade skills for AI Coding Agents following the open `.agents/` standard.
 
-Designed to work seamlessly across **OpenAI Codex**, **Anthropic Claude Code**, **Google Antigravity (`agy`)**, **Cursor IDE**, **Nous Hermes Agent**, **Cline**, **Roo Code**, and custom LLM workflows.
+Designed to work seamlessly across **Anthropic Claude Code**, **OpenAI Codex**, **Google Antigravity (`agy`)**, **Cursor IDE**, **Windsurf**, **Nous Hermes Agent**, **Cline**, and **Roo Code**.
 
 ---
 
@@ -12,49 +12,61 @@ Designed to work seamlessly across **OpenAI Codex**, **Anthropic Claude Code**, 
 ├── .agents/
 │   ├── README.md
 │   └── skills/
-│       └── excalidraw/
-│           ├── SKILL.md
-│           ├── references/
-│           │   ├── colors.md
-│           │   ├── dark-mode.md
-│           │   └── examples.md
-│           └── scripts/
-│               └── upload.py
+│       ├── braiam-orchestrator/
+│       │   └── SKILL.md
+│       ├── spec-driven-development/
+│       │   └── SKILL.md
+│       ├── braiam-hybrid-worker/
+│       │   └── SKILL.md
+│       ├── excalidraw/
+│       │   ├── SKILL.md
+│       │   ├── references/
+│       │   └── scripts/
+│       └── evolution-api-whatsapp/
+│           └── SKILL.md
 ├── AGENTS.md
 └── README.md
 ```
 
 ---
 
-## 🛠️ Available Skills
+## 🛠️ Published Skills
 
-### 🎨 `excalidraw`
+### 🧠 1. `braiam-orchestrator`
+- **Location**: [`.agents/skills/braiam-orchestrator/SKILL.md`](.agents/skills/braiam-orchestrator/SKILL.md)
+- **Description**: Universal AI Operating System architecture. Implements 4-tier bounded context architecture (Level 0 Core → Level 1 Project Packet → Level 2 Evidence → Level 3 Archive), privacy boundaries (`*-life-private` vs `*-company-private` vs `*-os`), and multi-agent coordination.
+
+### 📐 2. `spec-driven-development`
+- **Location**: [`.agents/skills/spec-driven-development/SKILL.md`](.agents/skills/spec-driven-development/SKILL.md)
+- **Description**: Spec-Driven Development (SDD) standard for autonomous agents (inspired by GitHub Next & Matt Pocock prompting standards). Spec-first contracts, non-goals, upfront test harnesses, and deterministic verification.
+
+### ⚡ 3. `braiam-hybrid-worker`
+- **Location**: [`.agents/skills/braiam-hybrid-worker/SKILL.md`](.agents/skills/braiam-hybrid-worker/SKILL.md)
+- **Description**: Remote and hybrid worker delegation protocol. Efficiently orchestrate Claude Code, OpenAI Codex, and Google Antigravity across local workstations and cloud VPS while optimizing token quotas.
+
+### 🎨 4. `excalidraw`
 - **Location**: [`.agents/skills/excalidraw/SKILL.md`](.agents/skills/excalidraw/SKILL.md)
-- **Description**: Generates clean, hand-drawn Excalidraw diagrams (`.excalidraw` JSON) for system architectures, workflows, sequence diagrams, and flowcharts.
-- **Features**:
-  - Valid Excalidraw v2 JSON envelope generation.
-  - Proper container bindings for text inside shapes & arrows (no unlinked text).
-  - Built-in AES-GCM client-side encryption upload script (`scripts/upload.py`) to generate instant shareable `https://excalidraw.com/#json=...` links without needing an account.
-  - Color palettes, dark mode styling, and architecture templates.
+- **Description**: Generates valid hand-drawn Excalidraw diagrams (`.excalidraw` JSON) for system architectures, workflows, sequence diagrams, and flowcharts with client-side encrypted upload script (`scripts/upload.py`).
+
+### 💬 5. `evolution-api-whatsapp`
+- **Location**: [`.agents/skills/evolution-api-whatsapp/SKILL.md`](.agents/skills/evolution-api-whatsapp/SKILL.md)
+- **Description**: Diagnostic workflows, PostgreSQL database schema inspection, and instance management for self-hosted Evolution API WhatsApp stacks.
 
 ---
 
-## 🤖 Compatibility & How to Use
+## 🤖 How to Use with Any AI Agent
 
-### 1. Claude Code / Codex / Antigravity / Hermes
-Point your agent to the skill directory or include `AGENTS.md` in the project root:
-- The agent reads `AGENTS.md` and dynamically loads `.agents/skills/<skill-name>/SKILL.md` when relevant.
-
-### 2. Cursor / Windsurf
-Add a reference in `.cursorrules` or prompt:
-```markdown
-Follow the skills in .agents/skills/excalidraw/SKILL.md when generating diagrams.
-```
-
-### 3. Standalone Usage
-You can copy `.agents/skills/excalidraw/` directly into any project's `.agents/skills/` directory.
+### Universal Method (.agents standard)
+Place or symlink this `.agents` directory into your project root:
+- **Claude Code**: Recognizes `.agents/skills` directly.
+- **Codex / Antigravity**: Point to `.agents/skills/<skill-name>/SKILL.md`.
+- **Cursor / Windsurf**: Add a reference in `.cursorrules` or prompt:
+  ```markdown
+  Follow the rules in .agents/skills/spec-driven-development/SKILL.md
+  ```
+- **Hermes Agent**: Symlink or copy skills into `~/.hermes/skills/`.
 
 ---
 
 ## 📜 License
-MIT License.
+MIT License. Created by [Thiago Nobrega](https://github.com/tsnthiago).
