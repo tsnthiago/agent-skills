@@ -1,6 +1,6 @@
 # Repositório Universal de Skills para Agentes de IA (`agent-skills`) 🚀
 
-Bem-vindo ao **agent-skills**, uma coleção pública, portátil e pronta para produção de **50 skills** no padrão universal `.agents/skills/`.
+Bem-vindo ao **agent-skills**, uma coleção pública, portátil e pronta para produção de **51 skills** no padrão universal `.agents/skills/`.
 
 Projetado para funcionar de forma nativa e intercambiável com **Anthropic Claude Code**, **OpenAI Codex**, **Google Antigravity (`agy`)**, **Cursor IDE**, **Windsurf**, **Nous Hermes Agent**, **Cline** e **Roo Code**.
 
@@ -116,6 +116,7 @@ Abaixo está o guia detalhado explicando **o que é**, **para que serve** e **qu
 |---|---|---|
 | **[`ai-trend-monitor`](.agents/skills/ai-trend-monitor/SKILL.md)** | Curador stateful que monitora TechCrunch, Hacker News e Google News, alertando apenas sobre notícias 100% inéditas. | Em rotinas diárias/horárias de briefing e curadoria de novidades de IA. |
 | **[`twitter-trends`](.agents/skills/twitter-trends/SKILL.md)** | Extrai em tempo real os Trending Topics do X/Twitter (Brasil e Global) sem necessidade de login ou API Key. | Ao monitorar assuntos em alta, notícias quentes ou tópicos virais do momento. |
+| **[`agent-reach`](.agents/skills/agent-reach/SKILL.md)** | Roteador universal de busca e extração de conteúdo na internet em 15 plataformas (Twitter, Reddit, YouTube, Bilibili, GitHub, LinkedIn, XiaoHongShu, Exa, V2EX, etc.). | Ao fazer pesquisas profundas na web, buscar menções sociais ou raspar links/artigos de múltiplas plataformas. |
 | **[`evolution-api-whatsapp`](.agents/skills/evolution-api-whatsapp/SKILL.md)** | Diagnóstico, status de instâncias, inspeção de banco PostgreSQL/Redis e webhooks da Evolution API. | Ao gerenciar ou solucionar problemas em gateways de WhatsApp self-hosted. |
 
 ---
