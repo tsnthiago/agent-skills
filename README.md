@@ -1,6 +1,6 @@
 # Repositório Universal de Skills para Agentes de IA (`agent-skills`) 🚀
 
-Bem-vindo ao **agent-skills**, uma coleção pública, portátil e pronta para produção de **51 skills** no padrão universal `.agents/skills/`.
+Bem-vindo ao **agent-skills**, uma coleção pública, portátil e pronta para produção de **53 skills** no padrão universal `.agents/skills/`.
 
 Projetado para funcionar de forma nativa e intercambiável com **Anthropic Claude Code**, **OpenAI Codex**, **Google Antigravity (`agy`)**, **Cursor IDE**, **Windsurf**, **Nous Hermes Agent**, **Cline** e **Roo Code**.
 
@@ -121,10 +121,12 @@ Abaixo está o guia detalhado explicando **o que é**, **para que serve** e **qu
 
 ---
 
-### 🎨 6. Ferramentas Visuais & Observabilidade (BRAIAM)
+### 🎨 6. Grafos de Conhecimento, Visualização & Observabilidade (BRAIAM & Open Source)
 
 | Skill | Para que serve (Humano) | Quando a IA deve acionar (Gatilho) |
 |---|---|---|
+| **[`codegraph`](.agents/skills/codegraph/SKILL.md)** | Grafo semântico de código via AST (Tree-Sitter). Permite consultar definições, hierarquias de chamadas, blast radius e navegação estrutural instantânea sem usar grep. | Ao entender o funcionamento estrutural de uma codebase, rastrear quem chama o quê ou mapear o impacto de refatorações. |
+| **[`graphify`](.agents/skills/graphify/SKILL.md)** | Converte qualquer pasta de arquivos (código, docs, PDFs, imagens, áudios) em um grafo de conhecimento navegável, com `graph.html`, comunidades e relatório `GRAPH_REPORT.md`. | Quando o usuário pedir para mapear ou fazer perguntas contextuais sobre múltiplos documentos, repositórios ou conteúdos multimídia (`/graphify`). |
 | **[`excalidraw`](.agents/skills/excalidraw/SKILL.md)** | Gera diagramas arquiteturais em JSON nativo com upload automático (AES-GCM client-side) no [excalidraw.com](https://excalidraw.com). | Ao desenhar arquiteturas de sistemas, fluxogramas, sequências ou diagramas explicativos. |
 | **[`langfuse-stats`](.agents/skills/langfuse-stats/SKILL.md)** | Consulta telemetria, custos de tokens, traces e latência em instâncias locais do Langfuse. | Para auditar consumo de API, custos de LLMs e desempenho de agentes. |
 

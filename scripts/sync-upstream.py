@@ -3,6 +3,7 @@
 Sync upstream skills from:
 - https://github.com/mattpocock/skills.git
 - https://github.com/Panniantong/agent-reach.git
+- https://github.com/Graphify-Labs/graphify.git
 into .agents/skills/
 """
 
@@ -26,6 +27,11 @@ UPSTREAMS = [
         "name": "Panniantong/agent-reach",
         "url": "https://github.com/Panniantong/agent-reach.git",
         "type": "agent-reach"
+    },
+    {
+        "name": "Graphify-Labs/graphify",
+        "url": "https://github.com/Graphify-Labs/graphify.git",
+        "type": "graphify"
     }
 ]
 
@@ -72,6 +78,15 @@ def sync_agent_reach(clone_dir: Path):
                 shutil.copy2(item, guides_dest / item.name)
     return 1
 
+def sync_graphify(clone_dir: Path):
+    skill_file = clone_dir / "graphify" / "skill.md"
+    dest_path = TARGET_SKILLS_DIR / "graphify"
+    dest_path.mkdir(parents=True, exist_ok=True)
+    if skill_file.exists():
+        shutil.copy2(skill_file, dest_path / "SKILL.md")
+        return 1
+    return 0
+
 def main():
     TARGET_SKILLS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -86,6 +101,8 @@ def main():
                     count = sync_mattpocock(clone_dir)
                 elif upstream["type"] == "agent-reach":
                     count = sync_agent_reach(clone_dir)
+                elif upstream["type"] == "graphify":
+                    count = sync_graphify(clone_dir)
                 print(f"Successfully synced {count} skills from {upstream['name']}.")
             except Exception as e:
                 print(f"Error syncing {upstream['name']}: {e}", file=sys.stderr)
