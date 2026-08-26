@@ -1,6 +1,6 @@
 # Repositório Universal de Skills para Agentes de IA (`agent-skills`) 🚀
 
-Bem-vindo ao **agent-skills**, uma coleção pública, portátil e pronta para produção de **53 skills** no padrão universal `.agents/skills/`.
+Bem-vindo ao **agent-skills**, uma coleção pública, portátil e pronta para produção de **55 skills** no padrão universal `.agents/skills/`.
 
 Projetado para funcionar de forma nativa e intercambiável com **Anthropic Claude Code**, **OpenAI Codex**, **Google Antigravity (`agy`)**, **Cursor IDE**, **Windsurf**, **Nous Hermes Agent**, **Cline** e **Roo Code**.
 
@@ -129,6 +129,15 @@ Abaixo está o guia detalhado explicando **o que é**, **para que serve** e **qu
 | **[`graphify`](.agents/skills/graphify/SKILL.md)** | Converte qualquer pasta de arquivos (código, docs, PDFs, imagens, áudios) em um grafo de conhecimento navegável, com `graph.html`, comunidades e relatório `GRAPH_REPORT.md`. | Quando o usuário pedir para mapear ou fazer perguntas contextuais sobre múltiplos documentos, repositórios ou conteúdos multimídia (`/graphify`). |
 | **[`excalidraw`](.agents/skills/excalidraw/SKILL.md)** | Gera diagramas arquiteturais em JSON nativo com upload automático (AES-GCM client-side) no [excalidraw.com](https://excalidraw.com). | Ao desenhar arquiteturas de sistemas, fluxogramas, sequências ou diagramas explicativos. |
 | **[`langfuse-stats`](.agents/skills/langfuse-stats/SKILL.md)** | Consulta telemetria, custos de tokens, traces e latência em instâncias locais do Langfuse. | Para auditar consumo de API, custos de LLMs e desempenho de agentes. |
+
+---
+
+### ⚡ 7. Eficiência de Tokens & Contexto
+
+| Skill | Para que serve (Humano) | Quando a IA deve acionar (Gatilho) |
+|---|---|---|
+| **[`rtk-token-efficient-terminal`](.agents/skills/rtk-token-efficient-terminal/SKILL.md)** | Reduz ruído de saída de comandos de terminal com RTK, preservando exit codes e uma rota para recuperar detalhes quando necessários. | Ao executar Git, testes, builds, logs, Docker ou buscas que geram saída extensa para um agente. |
+| **[`caveman-local-token-efficiency`](.agents/skills/caveman-local-token-efficiency/SKILL.md)** | Audita e reduz fluxo de tokens com Caveman local, com privacidade, recuperação de contexto e limites de licença explícitos. | Antes de configurar compressão de prompt/contexto, proxy local ou resposta mais concisa em agentes. |
 
 ---
 
