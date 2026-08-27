@@ -118,6 +118,7 @@ Abaixo está o guia detalhado explicando **o que é**, **para que serve** e **qu
 | **[`twitter-trends`](.agents/skills/twitter-trends/SKILL.md)** | Extrai em tempo real os Trending Topics do X/Twitter (Brasil e Global) sem necessidade de login ou API Key. | Ao monitorar assuntos em alta, notícias quentes ou tópicos virais do momento. |
 | **[`agent-reach`](.agents/skills/agent-reach/SKILL.md)** | Roteador universal de busca e extração de conteúdo na internet em 15 plataformas (Twitter, Reddit, YouTube, Bilibili, GitHub, LinkedIn, XiaoHongShu, Exa, V2EX, etc.). | Ao fazer pesquisas profundas na web, buscar menções sociais ou raspar links/artigos de múltiplas plataformas. |
 | **[`evolution-api-whatsapp`](.agents/skills/evolution-api-whatsapp/SKILL.md)** | Diagnóstico, status de instâncias, inspeção de banco PostgreSQL/Redis e webhooks da Evolution API. | Ao gerenciar ou solucionar problemas em gateways de WhatsApp self-hosted. |
+| **[`opencli-x-browser-bridge`](.agents/skills/opencli-x-browser-bridge/SKILL.md)** | Conecta agentes ao X via OpenCLI e sessão Chrome controlada pelo operador, com leitura delimitada e escrita aprovada. | Ao integrar ou diagnosticar uma conta X sem mover cookies para um servidor. |
 
 ---
 
